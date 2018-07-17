@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { FormFilter } from './Form/formfilter.component';
 import { SpotifyAPIService } from './Services/spotify-api.service';
-import { Album  } from './Services/album-interface';
+import { Album, Track  } from './Services/album-interface';
+import { SpotifyAudioService } from './Services/spotify-audio.service';
+import { Subscription } from 'rxjs';
+
+
 
 
 @Component({
@@ -14,13 +18,44 @@ import { Album  } from './Services/album-interface';
     artist = "The Damned";
     albums: Album[];
     album: Album;
+    track: Track;
+    spotifyAudioSubscription: Subscription;
 
-    constructor(public SpotifyService: SpotifyAPIService){
+    constructor(public SpotifyService: SpotifyAPIService,
+                public SpotifyAudio: SpotifyAudioService){
         this.searchAlbums(this.artist);
+        this.spotifyAudioSubscription = SpotifyAudio.ended$.subscribe(() => this.album = null )
     }
 
     searchAlbums(author: string){
         this.SpotifyService.searchAlbums(author)
             .subscribe(res => this.albums = res.albums.items)
     }
+
+    playAlbum(albumToPlay: Album){
+        this.SpotifyService.loadAlbum(albumToPlay.id)
+            .subscribe(album => {
+                this.album = album;
+                this.playTrack(album.tracks.items[0]);
+            })
+    }
+
+    playTrack(track: Track){
+        if (this.track && this.track.id === track.id) { return; }
+        this.track = track;
+        this.SpotifyAudio.playAudioTrack(track.preview_url)
+    }
+
+    closeModal() {
+        this.album = null;
+        this.track = null;
+        this.SpotifyAudio.pauseTrack();
+      }
+    
+      ngOnDestroy() {
+        this.spotifyAudioSubscription.unsubscribe();
+        this.SpotifyAudio.destroy();
+      }
+
+
   }

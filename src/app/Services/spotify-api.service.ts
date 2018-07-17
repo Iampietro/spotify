@@ -20,4 +20,13 @@ export class SpotifyAPIService {
 
         return options;
     }
+
+    loadAlbum(id) {
+        const options = this.getOptions();
+        return this.http.get(`https://api.spotify.com/v1/albums/${id}`, options)
+            .map(res => res.json())
+    }
+
+
+
 }

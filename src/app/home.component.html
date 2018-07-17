@@ -6,3 +6,10 @@
     [albums]="albums"
     [activeAlbum]="album"
     (itemClick)="playAlbum($event)"></album-list>
+
+<tracks-list 
+    *ngIf="album"
+    [album]="album"
+    [track]="track"
+    (trackClick)="playTrack($event)"
+    (close)="closeModal()"></tracks-list>

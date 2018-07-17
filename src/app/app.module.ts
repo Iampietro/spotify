@@ -12,6 +12,10 @@ import { SpotifyAPIService } from './Services/spotify-api.service';
 import { Home } from './home.component';
 import { AlbumListComponent } from './Spotify/album-list.component';
 import { AlbumListItemComponent } from './Spotify/album-list-item.component';
+import { TrackListComponent } from './Spotify/track-list.component';
+import { SecsToTimePipe } from './Pipes/secstotime.pipe';
+import { SpotifyAudioService } from './Services/spotify-audio.service';
+
 
 
 
@@ -22,7 +26,9 @@ import { AlbumListItemComponent } from './Spotify/album-list-item.component';
     FormFilter,
     Home,
     AlbumListComponent,
-    AlbumListItemComponent
+    AlbumListItemComponent,
+    TrackListComponent,
+    SecsToTimePipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,7 @@ import { AlbumListItemComponent } from './Spotify/album-list-item.component';
     FormsModule
     
   ],
-  providers: [SpotifyAPIService],
+  providers: [SpotifyAPIService, SpotifyAudioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
