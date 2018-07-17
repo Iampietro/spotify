@@ -1,0 +1,8 @@
+<form-filter
+    [text]="artist"
+    (search)="searchAlbums($event)"></form-filter>
+
+<album-list
+    [albums]="albums"
+    [activeAlbum]="album"
+    (itemClick)="playAlbum($event)"></album-list>

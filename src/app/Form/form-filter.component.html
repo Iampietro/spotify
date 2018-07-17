@@ -1,0 +1,11 @@
+<form novalidate
+    (ngSubmit)="search.emit(titleRef.value)">
+        <div class="form-group">
+            <label for="artist">Type an Artist Name</label>
+            <input type="text" class="form-control"
+            #titleRef id="artist"
+            [value]="text" required
+            placeholder="Search your favourite music!">
+        </div>
+        <button class="btn btn-success" type="submit">Search</button>
+</form>
