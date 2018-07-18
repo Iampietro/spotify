@@ -1,0 +1,32 @@
+.cover:hover {
+    cursor: pointer;
+}
+.cover.playing {
+    border: 6px dashed #e45343;
+}
+
+.forImage {
+    width: 31%;
+    padding: 1%;
+    border: 6px solid #ececec;
+}
+
+bkcolor {
+    /* subtlepatterns.com */
+      background: url("http://neilcarpenter.com/demos/asfalt.png") repeat;
+}
+
+.track {
+    color: black;
+    font-size: 30px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.tracks-list {
+    float: right;
+}
+
+.display-album {
+    width: 100%;
+}

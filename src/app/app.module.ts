@@ -15,6 +15,7 @@ import { AlbumListItemComponent } from './Spotify/album-list-item.component';
 import { TrackListComponent } from './Spotify/track-list.component';
 import { SecsToTimePipe } from './Pipes/secstotime.pipe';
 import { SpotifyAudioService } from './Services/spotify-audio.service';
+import { ParticularAlbum } from './particular-album.component';
 
 
 
@@ -28,7 +29,9 @@ import { SpotifyAudioService } from './Services/spotify-audio.service';
     AlbumListComponent,
     AlbumListItemComponent,
     TrackListComponent,
-    SecsToTimePipe
+    SecsToTimePipe,
+    ParticularAlbum
+    
   ],
   imports: [
     BrowserModule,

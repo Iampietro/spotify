@@ -5,11 +5,8 @@
 <album-list
     [albums]="albums"
     [activeAlbum]="album"
-    (itemClick)="playAlbum($event)"></album-list>
+    (itemClick)="goToDetail($event)"></album-list>
 
-<tracks-list 
+<particular-album
     *ngIf="album"
-    [album]="album"
-    [track]="track"
-    (trackClick)="playTrack($event)"
-    (close)="closeModal()"></tracks-list>
+    [album]="album"></particular-album>
