@@ -16,9 +16,10 @@ import { FormFilter } from './Form/formfilter.component';
 
 })
 export class ParticularAlbum {
+    
     track: Track;
-    @Input() album: Album;
     artist = "";
+    @Input() album: Album;
 
     /*ngOnInit(): void {
         this.route.paramMap

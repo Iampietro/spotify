@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 })
 export class TrackListComponent {
+  
   @Input() album: any;
   @Input() track: any;
   @Output() trackClick: EventEmitter<any> = new EventEmitter<any>();

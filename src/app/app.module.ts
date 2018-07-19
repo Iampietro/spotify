@@ -13,12 +13,11 @@ import { Home } from './home.component';
 import { AlbumListComponent } from './Spotify/album-list.component';
 import { AlbumListItemComponent } from './Spotify/album-list-item.component';
 import { TrackListComponent } from './Spotify/track-list.component';
-import { SecsToTimePipe } from './Pipes/secstotime.pipe';
+import { SecsToTimePipe } from './Pipes/secs-to-time.pipe';
 import { SpotifyAudioService } from './Services/spotify-audio.service';
 import { ParticularAlbum } from './particular-album.component';
-
-
-
+import { Artists } from './artists/artists.component';
+import { ParticularArtist } from './particularArtist/particularArtist.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,9 @@ import { ParticularAlbum } from './particular-album.component';
     AlbumListItemComponent,
     TrackListComponent,
     SecsToTimePipe,
-    ParticularAlbum
+    ParticularAlbum,
+    Artists,
+    ParticularArtist
     
   ],
   imports: [
@@ -41,7 +42,10 @@ import { ParticularAlbum } from './particular-album.component';
     FormsModule
     
   ],
-  providers: [SpotifyAPIService, SpotifyAudioService],
+  providers: [
+    SpotifyAPIService,
+    SpotifyAudioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

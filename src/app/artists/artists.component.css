@@ -1,0 +1,9 @@
+.displayArtist {
+    width: 45%;
+    float: left;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    margin: 10px 0px 15px 30px;
+    border: 1px solid;
+}

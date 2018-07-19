@@ -7,6 +7,7 @@ import { Album } from '../Services/album-interface';
   styleUrls: ['album-list.component.css']
 })
 export class AlbumListComponent {
+  
   @Input() albums: Array<Album>;
   @Input() activeAlbum: Album;
   @Output() itemClick: EventEmitter<Album> = new EventEmitter<Album>();

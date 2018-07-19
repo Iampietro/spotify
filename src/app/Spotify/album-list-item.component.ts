@@ -12,6 +12,7 @@ import { Component, Input, HostBinding } from '@angular/core';
   styleUrls: ['album-list-item.component.css']
 })
 export class AlbumListItemComponent {
+  
   @Input() active: boolean;
   @Input() album: any;
   @HostBinding() className = 'cell';

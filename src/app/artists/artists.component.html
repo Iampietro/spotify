@@ -1,0 +1,13 @@
+<h1>Artists</h1>
+<h4>You are currently searching: {{ currentSearch }}</h4>
+<form-filter [text]="artist" (search)="searchArtists($event)">
+</form-filter>
+
+
+<div class="row">
+    <particularArtist 
+        *ngFor="let artist of artists" 
+        [artist]="artist" 
+        class="displayArtist">
+    </particularArtist>
+</div>

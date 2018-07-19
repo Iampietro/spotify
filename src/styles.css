@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Cousine';
+    background: linear-gradient(to right, #556270 , #ff6b6b);
+}
+
+.title {
+    margin-right: 1%;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: 53rem;
+    width: 90%;
+  }
+
+  .column { margin-bottom: 1.5rem; }
+
+  .column.full { width: 100%; }
+  .column.two-thirds { width: 66.7%; }
+  .column.half { width: 50%; }
+  .column.third { width: 33.3%; }
+  .column.fourth { width: 25%; }
+  .column.flow-opposite { float: right; }
+
+
+.row:before, 
+.row:after {
+    content:"";
+    display: table ;
+    clear:both;
+}

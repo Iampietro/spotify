@@ -1,6 +1,7 @@
 <div class="grid">
     <album-list-item *ngFor="let album of albums"
-    [album]="album" 
-    [active]="activeAlbum?.id === album.id" 
-    (click)="itemClick.emit(album)"></album-list-item>
+        [album]="album" 
+        [active]="activeAlbum?.id === album.id" 
+        (click)="itemClick.emit(album)">
+    </album-list-item>
 </div>

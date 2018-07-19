@@ -6,25 +6,26 @@
 }
 
 .forImage {
-    width: 31%;
+    width: 36%;
     padding: 1%;
     border: 6px solid #ececec;
 }
 
-bkcolor {
-    /* subtlepatterns.com */
-      background: url("http://neilcarpenter.com/demos/asfalt.png") repeat;
-}
+
 
 .track {
     color: black;
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 3vh;
+    line-height: 105%;
     cursor: pointer;
 }
 
 .tracks-list {
+    width: 64%;
     float: right;
+    text-align: right;
+    margin-right: 0px;
+    font-style: italic;
 }
 
 .display-album {

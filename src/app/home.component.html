@@ -1,12 +1,10 @@
-<form-filter
-    [text]="artist"
-    (search)="searchAlbums($event)"></form-filter>
-
-<album-list
-    [albums]="albums"
-    [activeAlbum]="album"
-    (itemClick)="goToDetail($event)"></album-list>
-
-<particular-album
-    *ngIf="album"
-    [album]="album"></particular-album>
+<div>
+    <img>
+    <div>
+        <h3>Welcome to</h3>
+        <h1>Spotisearch</h1>
+        <h4>Search your favourite songs over Spotify, just enter an artist's name in the following search box and enjoy!</h4>
+    </div>
+    <form-filter [text]="artist" (search)="searchAlbums($event)"></form-filter>
+    
+</div>
