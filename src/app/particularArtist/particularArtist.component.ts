@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Artist } from '../Services/album-interface';
+import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Artist, Image, Album } from '../Services/album-interface';
 import { SpotifyAPIService } from '../Services/spotify-api.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,10 +12,29 @@ import 'rxjs/add/operator/switchMap';
     styleUrls: ['/particularArtist.component.css']
 })
 
-export class ParticularArtist {
+export class ParticularArtist implements OnInit {
 
-    @Input() artist: Artist;
+    albums: Album[];
 
-    constructor() {}
-    
+    constructor(private SpotifyService: SpotifyAPIService,
+                private route: ActivatedRoute,
+                public router: Router
+        ) {
+    }
+
+    ngOnInit() {
+        this.route.paramMap
+            .switchMap((params: ParamMap) => this.SpotifyService.searchArtist(params.get('artist')))
+            .subscribe(res => this.albums = res.items);
+    }
+
+    searchArtists(artist: string) : void {
+        let url = "artists/";
+        this.router.navigate([url, artist]);
+    }
+
+    goToAlbum(albumId: string) : void {
+        let url = "album/";
+        this.router.navigate([url, albumId]);
+    }
 }

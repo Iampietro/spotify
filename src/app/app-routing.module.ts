@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 import { AuthComponent } from './Auth/auth.component'
-import { Home } from './home.component'
-import { ParticularAlbum } from './particular-album.component'
+import { Home } from './home/home.component'
+import { ParticularAlbum } from './particularAlbum/particular-album.component'
 import { Artists } from './artists/artists.component';
+import { ParticularArtist } from './particularArtist/particularArtist.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'set-token', component: AuthComponent },
   { path: 'home', component: Home },
   { path: 'album/:id', component: ParticularAlbum },
-  { path: 'artists/:particularArtist', component: Artists }
+  { path: 'artists/:search', component: Artists },
+  { path: 'artist/:artist', component: ParticularArtist}
 
 ];
 

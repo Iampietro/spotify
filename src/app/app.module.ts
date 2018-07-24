@@ -9,13 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthComponent } from "./Auth/auth.component";
 import { FormFilter } from './Form/formfilter.component'
 import { SpotifyAPIService } from './Services/spotify-api.service';
-import { Home } from './home.component';
-import { AlbumListComponent } from './Spotify/album-list.component';
-import { AlbumListItemComponent } from './Spotify/album-list-item.component';
-import { TrackListComponent } from './Spotify/track-list.component';
+import { Home } from './home/home.component';
 import { SecsToTimePipe } from './Pipes/secs-to-time.pipe';
 import { SpotifyAudioService } from './Services/spotify-audio.service';
-import { ParticularAlbum } from './particular-album.component';
+import { ParticularAlbum } from './particularAlbum/particular-album.component';
 import { Artists } from './artists/artists.component';
 import { ParticularArtist } from './particularArtist/particularArtist.component';
 
@@ -25,9 +22,6 @@ import { ParticularArtist } from './particularArtist/particularArtist.component'
     AuthComponent,
     FormFilter,
     Home,
-    AlbumListComponent,
-    AlbumListItemComponent,
-    TrackListComponent,
     SecsToTimePipe,
     ParticularAlbum,
     Artists,

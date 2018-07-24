@@ -1,13 +1,21 @@
 <h1>Artists</h1>
 <h4>You are currently searching: {{ currentSearch }}</h4>
-<form-filter [text]="artist" (search)="searchArtists($event)">
+<form-filter 
+    [text]="artist" 
+    (search)="searchArtists($event)">
 </form-filter>
 
 
 <div class="row">
-    <particularArtist 
-        *ngFor="let artist of artists" 
-        [artist]="artist" 
-        class="displayArtist">
-    </particularArtist>
+    <div class="displayArtist" 
+        *ngFor="let artist of artists">
+        <img 
+            [src]="!!artist.images[0]?.url ? artist.images[0].url : './assets/noImg.jpg'" 
+            class="images" 
+            (click)="searchArtist(artist.id)">
+        <div>
+            <h4 class="bandName">{{ artist.name }}</h4>
+        </div>
+    </div>
 </div>
+

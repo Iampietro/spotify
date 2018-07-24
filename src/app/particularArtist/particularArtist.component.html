@@ -1,3 +1,29 @@
-<div>
-    <img [src]="artist.images[0]?.url" class="images">
+<div class="top">
+    <img 
+        [src]="'./assets/logo.jpg'"
+        class="logo">
+    <form-filter
+        class="searchInput"
+        (search)="searchArtists($event)">
+    </form-filter>
+</div>
+<div class="bandPresentation" *ngIf="albums">
+    <div class="bandContent">
+        <img 
+            [src]="albums[0].images[0].url"
+            class="bandImage">
+        <h2 class="bandInfo">
+            {{albums[0].artists[0].name}}
+        </h2>
+    </div>
+</div>
+<div *ngIf="albums" class="bandPresentation">
+    <div class="displayAlbum" *ngFor="let album of albums">
+            <img
+                [src]="album.images[0]?.url"
+                class="bandImage"
+                (click)="goToAlbum(album.id)">
+            <h3>{{ album.name }}</h3>
+            <p>{{ album.release_date | date:'shortDate' }}</p>
+    </div>
 </div>

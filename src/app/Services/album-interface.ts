@@ -10,6 +10,7 @@
     name: string;
     type: string;
     uri: string;
+    images: Image;
   }
 
   export interface Copyright {

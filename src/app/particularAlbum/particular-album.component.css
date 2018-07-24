@@ -1,0 +1,81 @@
+.logo{
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+    margin: 10px 10px 10px 10px;
+    display: inline;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.searchInput {
+    float: right;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.top {
+    display: block;
+    border: 2px solid black;
+    margin-bottom: 0.03%;
+}
+
+.bandPresentation {
+    display: block;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+.bandContent {
+    margin: 3% 0% 3% 14%;
+    overflow:hidden;
+}
+
+.bandInfo {
+    display: inline;
+    margin-left: 10px;
+}
+
+.bandImage {
+    height: 120px;
+    display: inline;
+    float: left;
+}
+
+h4 {
+    margin-left: 130px;
+}
+
+
+table {
+    width:70%;
+    margin: 2% 0% 2% 14%;
+    opacity: 0.6;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table tr:nth-child(odd) {
+   background-color: #fff;
+}
+
+table th {
+    background-color: black;
+    color: white;
+}
+
+span {
+    cursor: pointer;
+}

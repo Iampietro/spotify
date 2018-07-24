@@ -1,0 +1,35 @@
+<div class="top">
+    <img 
+        [src]="'./assets/logo.jpg'"
+        class="logo">
+    <form-filter
+        class="searchInput"
+        (search)="searchArtists($event)">
+    </form-filter>
+</div>
+<div class="bandPresentation" *ngIf="album">
+    <div class="bandContent">
+        <img 
+            [src]="album.images[0].url"
+            class="bandImage">
+        <h2 class="bandInfo">
+            {{ album.name }}
+        </h2>
+        <h4>
+            {{ album.artists[0].name }} - {{ album.release_date | date:'shortDate' }}
+        </h4>
+    </div>
+</div>
+<div *ngIf="album" class="bandPresentation">
+    <table>
+        <tr>
+            <th>Cd</th>
+        </tr>
+        <tr *ngFor="let track of album.tracks.items">
+            <td>
+                <span
+                    (click)="playTrack(track)">{{ track.name }}</span>
+            </td>
+        </tr>
+    </table>
+</div>
