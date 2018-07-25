@@ -1,0 +1,66 @@
+.logo{
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+    margin: 10px 10px 10px 10px;
+    display: inline;
+    border-radius: 50%;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.searchInput {
+    float: right;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.top {
+    display: block;
+    border: 2px solid black;
+    margin-bottom: 0.03%;
+}
+
+.bandPresentation {
+    display: block;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+.bandImage {
+    height: 120px;
+    display: inline;
+    float: left;
+}
+
+.bandImage:hover {
+    cursor: pointer;
+}
+
+.bandInfo {
+    display: inline;
+    margin-left: 10px;
+}
+
+.bandContent {
+    margin: 3% 0% 3% 14%;
+    overflow:hidden;
+}
+
+.displayAlbum {
+    width: 30%;
+    float: left;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    margin: 1% 0% 1% 14%;
+    border: 1px solid;
+    word-wrap: break-word;
+    max-height: 140px;
+}
+
+.bandPresentation .displayAlbum
+.bandImage {
+    margin: 10px 10px 10px 10px;
+}

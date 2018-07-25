@@ -1,0 +1,12 @@
+.logo{
+    height: 110px;
+    width: 110px;
+    border: 1px solid black;
+    margin: 1% 0% 1% 49%;
+    display: inline;
+    border-radius: 50%;
+}
+
+.logo:hover {
+    cursor: pointer;
+}

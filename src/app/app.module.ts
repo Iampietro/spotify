@@ -7,14 +7,19 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthComponent } from "./Auth/auth.component";
-import { FormFilter } from './Form/formfilter.component'
-import { SpotifyAPIService } from './Services/spotify-api.service';
+import { FormFilter } from './form/form-filter.component'
+import { SpotifyAPIService } from './Services/spotify-api/spotify-api.service';
 import { Home } from './home/home.component';
-import { SecsToTimePipe } from './Pipes/secs-to-time.pipe';
-import { SpotifyAudioService } from './Services/spotify-audio.service';
-import { ParticularAlbum } from './particularAlbum/particular-album.component';
+import { SpotifyAudioService } from './Services/spotify-audio/spotify-audio.service';
+import { ParticularAlbum } from './particular-album/particular-album.component';
 import { Artists } from './artists/artists.component';
-import { ParticularArtist } from './particularArtist/particularArtist.component';
+import { ParticularArtist } from './particular-artist/particularArtist.component';
+
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MyInterceptor } from './interceptors/my-interceptor';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './auth-service/auth-service.service';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +27,6 @@ import { ParticularArtist } from './particularArtist/particularArtist.component'
     AuthComponent,
     FormFilter,
     Home,
-    SecsToTimePipe,
     ParticularAlbum,
     Artists,
     ParticularArtist
@@ -33,12 +37,19 @@ import { ParticularArtist } from './particularArtist/particularArtist.component'
     HttpModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     
   ],
   providers: [
     SpotifyAPIService,
-    SpotifyAudioService
+    SpotifyAudioService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MyInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

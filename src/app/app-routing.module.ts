@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 import { AuthComponent } from './Auth/auth.component'
 import { Home } from './home/home.component'
-import { ParticularAlbum } from './particularAlbum/particular-album.component'
+import { ParticularAlbum } from './particular-album/particular-album.component'
 import { Artists } from './artists/artists.component';
-import { ParticularArtist } from './particularArtist/particularArtist.component';
+import { ParticularArtist } from './particular-artist/particularArtist.component';
 
 
 const routes: Routes = [

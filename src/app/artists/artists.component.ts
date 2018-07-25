@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Artist } from '../Services/album-interface';
-import { SpotifyAPIService } from '../Services/spotify-api.service';
+import { Artist } from '../model/artist';
+import { SpotifyAPIService } from '../Services/spotify-api/spotify-api.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
+import config from '../web-config/config';
 
 
 @Component({
@@ -15,35 +16,35 @@ import 'rxjs/add/operator/switchMap';
 export class Artists implements OnInit {
 
     currentSearch: string;
-    artist: string;
     artists: Artist[];
+    artist: string;
 
     constructor(
         private SpotifyService: SpotifyAPIService,
         private route: ActivatedRoute,
         public router: Router,
     ) {
-        this.artist = "";
-    }
+        this.artist = '';
+     }
 
     ngOnInit() {
         this.route.paramMap
             .switchMap((params: ParamMap) => this.SpotifyService.searchArtists(params.get('search')))
-            .subscribe(res => this.artists = res.artists.items);
-        this.currentSearch = this.route.snapshot.params.particularArtist;
+            .subscribe(res => {this.artists = res.artists.items; console.log(res)});
+        this.currentSearch = this.route.snapshot.params.search;
     }
 
     searchArtists(author: string) : void {
         this.currentSearch = author;
-        /*this.SpotifyService.searchArtists(author)
-            .subscribe(res => this.artists = res.artists.items)*/
-        let url = "artists/";
-        this.router.navigate([url, author]);
+        this.router.navigate([config.ARTISTS, author]);
     }
 
     searchArtist(artistId: string) : void {
-        let url = "artist/";
-        this.router.navigate([url, artistId]);
+        this.router.navigate([config.ARTIST, artistId]);
+    }
+
+    goHome() : void {
+        this.router.navigate([config.HOME]);
     }
 
 }
