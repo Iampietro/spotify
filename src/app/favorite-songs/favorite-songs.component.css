@@ -1,4 +1,4 @@
-.displayArtist {
+.displayTrack {
     width: 46%;
     float: left;
     overflow:hidden;
@@ -21,22 +21,16 @@
     cursor: pointer;
 }
 
-.logo{
-    height: 110px;
-    width: 110px;
-    border: 1px solid black;
-    margin: 1% 0% 1% 49%;
-    display: inline;
-    border-radius: 50%;
-}
-
-.logo:hover {
-    cursor: pointer;
+.responsive-text:before {
+    content: attr(data-desktoptext);
 }
 
 @media (min-width: 500px) and (max-width: 865px){
+    .responsive-text:before {
+        content: attr(data-phonetext);
+    }
 
-    .displayArtist {
+    .displayTrack {
         width: 90%;
         float: left;
         overflow:hidden;

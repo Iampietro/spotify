@@ -19,6 +19,11 @@
         <h4>
             {{ album.artists[0].name }} - {{ album.release_date | date:'shortDate' }}
         </h4>
+        <label>Order by duration:</label>
+        <select (change)="orderByDuration($event.target.value)">
+            <option value=1>major</option>
+            <option value=2>minor</option>
+        </select>
     </div>
 </div>
 <div *ngIf="album" class="bandPresentation">
@@ -32,6 +37,17 @@
                     (click)="playTrack(track)">{{ track.name }}
                 </span>
                 <span *ngIf="!track.preview_url">(This track has no preview)</span>
+                <i [ngClass]="favorite.includes(track.id) ? 'fas fa-star align tooltip' : 'far fa-star align tooltip' " 
+                   (click)="addFavorite(track.id)"> 
+                   <span class="tooltiptext"
+                        *ngIf="!favorite.includes(track.id)">
+                       Add to Favorites
+                   </span>
+                   <span class="tooltiptext"
+                        *ngIf="favorite.includes(track.id)">
+                       Remove from Favorites
+                   </span>
+                </i>
             </td>
         </tr>
     </table>

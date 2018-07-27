@@ -14,6 +14,7 @@ import { SpotifyAudioService } from './Services/spotify-audio/spotify-audio.serv
 import { ParticularAlbum } from './particular-album/particular-album.component';
 import { Artists } from './artists/artists.component';
 import { ParticularArtist } from './particular-artist/particularArtist.component';
+import { FavoriteSongs } from './favorite-songs/favorite-songs.component';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyInterceptor } from './interceptors/my-interceptor';
@@ -29,7 +30,8 @@ import { AuthService } from './auth-service/auth-service.service';
     Home,
     ParticularAlbum,
     Artists,
-    ParticularArtist
+    ParticularArtist,
+    FavoriteSongs
     
   ],
   imports: [

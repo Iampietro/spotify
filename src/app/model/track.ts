@@ -1,7 +1,9 @@
 import { Artist2 } from './artist2';
 import { ExternalUrls4 } from './external-urls4';
+import { Album } from './album';
 
 export interface Track {
+    album: Album
     artists: Artist2[];
     available_markets: string[];
     disc_number: number;

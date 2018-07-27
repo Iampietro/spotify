@@ -30,7 +30,7 @@ export class Artists implements OnInit {
     ngOnInit() {
         this.route.paramMap
             .switchMap((params: ParamMap) => this.SpotifyService.searchArtists(params.get('search')))
-            .subscribe(res => {this.artists = res.artists.items; console.log(res)});
+            .subscribe(res => this.artists = res.artists.items);
         this.currentSearch = this.route.snapshot.params.search;
     }
 

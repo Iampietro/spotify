@@ -6,7 +6,8 @@
                 #titleRef id="artist" 
                 [value]="text" 
                 required 
-                placeholder="Type the name of your favorite artist!">
+                placeholder="Type the name of your favorite artist!"
+                (keyup.enter)="search.emit(titleRef.value)">
             <button class="myButton" type="submit">Search</button>
         </div>
     </div>

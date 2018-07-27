@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SpotifyAPIService } from '../Services/spotify-api/spotify-api.service';
 import { Album } from '../model/album';
 import { Track } from '../model/track';
@@ -15,13 +15,14 @@ import config from '../web-config/config';
     styleUrls: ['./home.component.css']
 })
 
-export class Home {
+export class Home implements OnInit{
     
     artist: string;
     albums: Album[];
     album: Album;
     track: Track;
     spotifyAudioSubscription: Subscription;
+    favorites: string;
 
     constructor(public SpotifyService: SpotifyAPIService,
         public SpotifyAudio: SpotifyAudioService,
@@ -32,7 +33,6 @@ export class Home {
 
     searchArtists(author: string) : void {
         this.router.navigate([config.ARTISTS, author]);
-        
     }
 
     goToDetail(albumToPlay: Album): void {
@@ -47,6 +47,12 @@ export class Home {
         this.SpotifyAudio.playAudioTrack(track.preview_url)
     }
 
+    ngOnInit() {
+        const f = localStorage.getItem('favorites');
+        if(f) {
+            this.favorites = JSON.parse(f);
+        }
+    }
 
 
 }

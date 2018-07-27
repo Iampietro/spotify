@@ -38,3 +38,11 @@
     float: right;
     width: 80%;
 }
+
+@media only screen and  (min-width: 500px) and (max-width: 955px) {
+    
+    .myButton{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
