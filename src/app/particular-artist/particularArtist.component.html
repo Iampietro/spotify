@@ -3,9 +3,11 @@
         [src]="'./assets/logo.jpg'"
         class="logo"
         (click)="goHome()">
+    <i class="fas fa-search invisible" (click)="display_search()"></i>
     <form-filter
         class="searchInput"
-        (search)="searchArtists($event)">
+        (search)="searchArtists($event)"
+        #searchInput>
     </form-filter>
 </div>
 <div class="bandPresentation" *ngIf="albums">

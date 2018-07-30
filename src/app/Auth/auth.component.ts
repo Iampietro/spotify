@@ -32,7 +32,7 @@ export class AuthComponent implements OnInit {
   ngOnInit() {
     
     window.location.href = this.url;
-    let tokenRoute = this.route.fragment._value;
+    let tokenRoute = this.route.fragment.value;
     let fragment1 = tokenRoute ? tokenRoute.match(/^(.*?)&/) : '';
     if (fragment1) {
       this.token = fragment1[1].replace('access_token=', '');

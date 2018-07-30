@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild, AfterViewInit, HostListener } from '@angular/core';
 import { Album } from '../model/album';
 import { Track } from '../model/track';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -20,23 +20,37 @@ export class ParticularAlbum implements OnInit {
     track: Track;
     album: Album;
     favorite: string[];
+    isHidden: boolean;
+    @ViewChild("searchInput", {read: ElementRef}) searchInput: ElementRef;
+    innerWidth: any;
 
     constructor(
         private SpotifyService: SpotifyAPIService,
         private route: ActivatedRoute,
         public SpotifyAudio: SpotifyAudioService,
-        private router: Router
+        private router: Router,
+        private renderer: Renderer2
     ) {
         this.favorite = [];
     }
 
+    @HostListener('window:resize', ['$event'])
+
+    onResize(event) {
+        this.innerWidth = window.innerWidth;
+        if(this.innerWidth > 955) {
+            this.searchInput.nativeElement.style.display = "block";
+        }
+        if(this.innerWidth < 956 && this.isHidden) {
+            this.searchInput.nativeElement.style.display = "none";
+        }
+    }
 
     playTrack(track: Track): void {
         if (this.track && this.track.id === track.id) { return; }
         //this.track = track;
         this.SpotifyAudio.playAudioTrack(track.preview_url);
     }
-
 
     ngOnInit() {
         this.route.paramMap
@@ -100,6 +114,17 @@ export class ParticularAlbum implements OnInit {
         if (a.duration_ms < b.duration_ms)
             return 1;
         return 0;
+    }
+
+    display_search() : void {
+        if(this.isHidden){
+            this.searchInput.nativeElement.style.display = "block";
+            this.isHidden = false;
+            
+        } else {
+            this.searchInput.nativeElement.style.display = "none";
+            this.isHidden = true;
+        }        
     }
 
 }

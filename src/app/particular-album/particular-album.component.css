@@ -136,3 +136,75 @@ select, label {
     display: inline;
     margin-left: 1%;
 }
+
+.invisible {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media (min-width: 500px) and (max-width: 955px) {
+    .bandPresentation {
+        width: 100%;
+        overflow: visible;
+    }
+    .searchInput {
+        margin-top: 0px;
+    }
+    .invisible { 
+        opacity: 1;
+        visibility: visible;
+        display: inline;
+        margin-left: 67%;
+        position: absolute;
+        margin-top: 2%;
+        cursor: pointer;
+    }
+    .searchInput {
+        display: none;
+        position: absolute;
+        margin-left: 5%;
+    }
+}
+
+@media (min-width: 580px) and (max-width: 629px) {
+    .invisible { 
+        margin-top: 1.5%;
+        margin-left: 69%;
+    }
+}
+@media (min-width: 630px) and (max-width: 684px) {
+    .invisible { 
+        margin-top: 1%;
+        margin-left: 71%;
+    }
+}
+@media (min-width: 684px) and (max-width: 750px) {
+    .invisible { 
+        margin-top: 0.5%;
+        margin-left: 72.5%;
+    }
+}
+@media (min-width: 751px) and (max-width: 800px) {
+    .invisible { 
+        margin-top: 0.5%;
+        margin-left: 74%;
+    }
+}
+@media (min-width: 801px) and (max-width: 850px) {
+    .invisible { 
+        margin-top: 0.2%;
+        margin-left: 75%;
+    }
+}
+@media (min-width: 851px) and (max-width: 900px) {
+    .invisible { 
+        margin-top: 0.2%;
+        margin-left: 76%;
+    }
+}
+@media (min-width: 901px) and (max-width: 955px) {
+    .invisible { 
+        margin-top: 0.2%;
+        margin-left: 77%;
+    }
+}

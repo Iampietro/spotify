@@ -34,7 +34,12 @@
     cursor: pointer;
 }
 
-@media (min-width: 500px) and (max-width: 865px){
+.invisible {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media (min-width: 320px) and (max-width: 955px){
 
     .displayArtist {
         width: 90%;
@@ -44,5 +49,47 @@
         margin: 10px 0px 15px 30px;
         border: 1px solid;
         word-wrap: break-word;
+    }
+
+    .logo{
+        height: 60px;
+        width: 60px;
+        border: 1px solid black;
+        margin: 2% 0% 2% 42%;
+        display: inline;
+        border-radius: 50%;
+    }
+
+    .searchInput {
+        display: none;
+        position: absolute;
+        margin: -5% 0% 0% 3%;
+        width: 80%;
+    }
+
+    .invisible { 
+        opacity: 1;
+        visibility: visible;
+        display: inline;
+        margin-left: 34%;
+        position: absolute;
+        margin-top: 3%;
+        cursor: pointer;
+    }
+
+    .top {
+        display: block;
+        border: 2px solid black;
+        margin-bottom: 0.03%;
+    }
+
+    .bandPresentation {
+        display: block;
+        border: 2px solid black;
+        overflow: hidden;
+    }
+
+    h1, h4 {
+        margin-left: 3%;
     }
 }

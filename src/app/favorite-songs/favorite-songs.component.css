@@ -25,7 +25,7 @@
     content: attr(data-desktoptext);
 }
 
-@media (min-width: 500px) and (max-width: 865px){
+@media (min-width: 320px) and (max-width: 865px){
     .responsive-text:before {
         content: attr(data-phonetext);
     }

@@ -1,17 +1,20 @@
-<div>
+<div class="top">
     <img
         [src]="'./assets/logo.jpg'"
         class="logo"
         (click)="goHome()">
+        <i class="fas fa-search invisible" (click)="display_search()"></i>
     <h1>Artists</h1>
     <h4>You are currently searching: {{ currentSearch }}</h4>
-    <form-filter [text]="artist" (search)="searchArtists($event)">
+    <form-filter 
+        [text]="artist" 
+        (search)="searchArtists($event)"
+        class="searchInput"
+        #searchInput>
     </form-filter>
 </div>
 
-
-
-<div class="row">
+<div class="bandPresentation">
     <div class="displayArtist" 
         *ngFor="let artist of artists">
         <img [src]="!!artist.images[0]?.url ? artist.images[0].url : './assets/noImg.jpg'"
